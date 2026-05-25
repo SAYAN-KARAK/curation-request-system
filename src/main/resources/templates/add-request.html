@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Add Request</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <div class="card p-4 shadow">
+
+        <h2 class="mb-4">Add Metadata Request</h2>
+
+        <form action="/save" method="post">
+
+            <div class="mb-3">
+                <label>Title</label>
+                <input type="text" name="title" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label>Description</label>
+                <textarea name="description" class="form-control"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label>Category</label>
+                <input type="text" name="category" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label>Priority</label>
+
+                <select name="priority" class="form-control">
+                    <option>HIGH</option>
+                    <option>MEDIUM</option>
+                    <option>LOW</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label>Status</label>
+
+                <select name="status" class="form-control">
+                    <option>PENDING</option>
+                    <option>IN_PROGRESS</option>
+                    <option>COMPLETED</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label>Requested By</label>
+                <input type="text" name="requestedBy" class="form-control">
+            </div>
+
+            <button class="btn btn-primary">
+                Save Request
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
