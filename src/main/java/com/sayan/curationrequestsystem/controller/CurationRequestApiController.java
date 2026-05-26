@@ -6,11 +6,15 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/requests")
+@Tag(name = "Curation Request API",
+        description = "APIs for managing metadata requests")
 public class CurationRequestApiController {
 
 
@@ -21,12 +25,14 @@ public class CurationRequestApiController {
         this.repository = repository;
     }
 
+    @Operation(summary = "Get all requests")
     @GetMapping
     public List<CurationRequest> getAllRequests() {
 
         return repository.findAll();
     }
 
+    @Operation(summary = "Create new request")
     @PostMapping
     public CurationRequest createRequest(@RequestBody CurationRequest request) {
 
